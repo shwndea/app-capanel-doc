@@ -1,4 +1,4 @@
-Application
+API Reference
 ================================================================
 
 The FastAPI application called "app".

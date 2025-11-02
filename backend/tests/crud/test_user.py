@@ -1,9 +1,9 @@
 from fastapi.encoders import jsonable_encoder
 from sqlmodel import Session
 
-from app import crud
+from app.utility import crud
 from app.core.security import verify_password
-from app.models import User, UserCreate, UserUpdate
+from app.utility.models import User, UserCreate, UserUpdate
 from tests.utils.utils import random_email, random_lower_string
 
 
@@ -13,7 +13,7 @@ def test_create_user(db: Session) -> None:
     user_in = UserCreate(email=email, password=password)
     user = crud.create_user(session=db, user_create=user_in)
     assert user.email == email
-    assert hasattr(user, "hashed_password")
+    assert hasattr(user, 'hashed_password')
 
 
 def test_authenticate_user(db: Session) -> None:
