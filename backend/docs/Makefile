@@ -34,7 +34,7 @@ else
 	xdg-open "$(Build_directory)/html/index.html"
 endif
 reload: docs-deps
-	$(Set_python_path) sphinx-autobuild "$(Source_directory)" "$(Build_directory)/html" $(Sphinx_options) --host 192.168.7.74
+	$(Set_python_path) sphinx-autobuild "$(Source_directory)" "$(Build_directory)/html" $(Sphinx_options)
 %: docs-deps
 	@$(Set_python_path) $(Python) -m sphinx -M $@ "$(Source_directory)" "$(Build_directory)" $(Sphinx_options) $(O)
 reload-intellij: docs-deps
