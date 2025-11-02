@@ -1,4 +1,4 @@
-Get started
+Overview
 ================================================================
 
 The California Accountability Panel is an open-source project. Contributions are welcome

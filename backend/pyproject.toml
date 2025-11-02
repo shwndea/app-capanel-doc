@@ -32,6 +32,8 @@ dependencies = [
     'pydata-sphinx-theme',
     'docutils-stubs',
     'types-docutils',
+    "myst-parser>=4.0.1",
+    'sphinx-design',
 ]
 
 [build-system]

@@ -1,8 +1,10 @@
 California Accountability Panel
 ================================================================
+Documentation for the California Accountability website.
+
 .. toctree::
    :caption: Goals & Expectations
-   :maxdepth: 1
+   :maxdepth: 2
 
    goals
    expectations

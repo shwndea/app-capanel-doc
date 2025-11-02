@@ -11,12 +11,17 @@ os.environ.setdefault('POSTGRES_DB', 'app')
 os.environ.setdefault('FIRST_SUPERUSER', 'admin@example.com')
 os.environ.setdefault('FIRST_SUPERUSER_PASSWORD', 'changeme')
 sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('.'))
 project = 'California Accountability Panel'
 copyright = '2025, Open Sacramento'
 author = 'Open Sacramento'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx_autodoc_typehints',
+    'myst_parser',
+    'sphinx_design',
+    '_extension.gallery_directive',
+    '_extension.component_directive',
 ]
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
@@ -35,8 +40,14 @@ html_theme_options = {
     'navigation_depth': 4,
     'icon_links': [
         {
+            'name': 'Website',
+            'url': 'https://lbsis.org',
+            'icon': 'fas fa-globe',
+            'type': 'fontawesome',
+        },
+        {
             'name': 'GitHub',
-            'url': 'https://github.com/your-org/your-repo',
+            'url': 'https://github.com/opensacorg/app-capanel-web',
             'icon': 'fab fa-github',
             'type': 'fontawesome',
         },
@@ -51,7 +62,12 @@ html_context = {
     'github_version': 'main',
     'doc_path': 'backend/docs/source',
 }
-html_sidebars = {'**': ['sidebar-nav-bs.html', 'page-toc.html']}
+
+html_sidebars = {
+    'contribute/index': ['sidebar-nav-bs.html', 'page-toc.html'],
+    'feature/index': ['sidebar-nav-bs.html', 'page-toc.html'],
+    'user_guide/index': ['sidebar-nav-bs.html', 'page-toc.html'],
+}
 
 
 def setup_to_main(

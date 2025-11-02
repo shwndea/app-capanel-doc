@@ -19,7 +19,7 @@ help: docs-deps
 $(Venv_directory):
 	cd $(Project_root) && $(Uv) venv .venv
 docs-deps: $(Venv_directory)
-	cd $(Project_root) && $(Uv) sync --all-groups
+	cd $(Project_root) && $(Uv) sync
 clean:
 	rm -rf $(Build_directory)/*
 html: docs-deps
@@ -34,7 +34,7 @@ else
 	xdg-open "$(Build_directory)/html/index.html"
 endif
 reload: docs-deps
-	$(Set_python_path) sphinx-autobuild "$(Source_directory)" "$(Build_directory)/html" $(Sphinx_options) --host 192.168.7.81
+	$(Set_python_path) sphinx-autobuild "$(Source_directory)" "$(Build_directory)/html" $(Sphinx_options) --host 192.168.7.74
 %: docs-deps
 	@$(Set_python_path) $(Python) -m sphinx -M $@ "$(Source_directory)" "$(Build_directory)" $(Sphinx_options) $(O)
 reload-intellij: docs-deps
