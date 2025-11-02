@@ -4,12 +4,16 @@ from typing import Any, Dict
 
 from sphinx.application import Sphinx
 
+# Set required environment variables for Pydantic Settings validation
+os.environ.setdefault('PROJECT_NAME', 'California Accountability Panel')
 os.environ.setdefault('POSTGRES_SERVER', 'localhost')
 os.environ.setdefault('POSTGRES_USER', 'postgres')
 os.environ.setdefault('POSTGRES_PASSWORD', 'postgres')
 os.environ.setdefault('POSTGRES_DB', 'app')
 os.environ.setdefault('FIRST_SUPERUSER', 'admin@example.com')
 os.environ.setdefault('FIRST_SUPERUSER_PASSWORD', 'changeme')
+os.environ.setdefault('SECRET_KEY', 'dummy-secret-key-for-docs')
+
 sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('.'))
 project = 'California Accountability Panel'
@@ -96,7 +100,7 @@ def setup_to_main(
     context['to_main'] = to_main
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(sphinxApp: Sphinx) -> Dict[str, Any]:
     """Add custom configuration to the Sphinx app.
 
     Args:
@@ -104,9 +108,17 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     Returns:
         the 2 parallel parameters set to ``True``.
     """
-    app.connect('html-page-context', setup_to_main)
+    sphinxApp.connect('html-page-context', setup_to_main)
 
     return {
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
+
+
+try:
+    import app.api.routes.items
+
+    print(f'Successfully imported items: {dir(app.api.routes.items)}')
+except Exception as e:
+    print(f'Failed to import items: {e}')

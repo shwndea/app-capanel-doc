@@ -75,12 +75,12 @@ Core
 Data models and CRUD
 --------------------
 
-.. automodule:: app.models
+.. automodule:: app.utility.models
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: app.crud
+.. automodule:: app.utility.crud
    :members:
    :undoc-members:
    :show-inheritance:
@@ -88,7 +88,7 @@ Data models and CRUD
 Utilities
 ---------
 
-.. automodule:: app.utils
+.. automodule:: app.utility.utils
    :members:
    :undoc-members:
    :show-inheritance:
