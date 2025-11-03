@@ -1,15 +1,32 @@
 Run the application
 =========================
-1. Create and activate a virtual environment, then install dependencies:
+Make sure to change directory to the corresponding folder that you want to run.
 
-   - Using uv (recommended):
-     uv sync --all-groups
+FastAPI server
+---------------------------------------
 
-   - Using pip:
-     pip install -e .
+.. code-block:: bash
 
-3. Start the server:
+   uv sync --all-groups
+   fastapi run dev
+
+Or you can run
+
+.. code-block:: bash
 
    uvicorn app.main:app --reload
 
-The OpenAPI docs will be available at http://127.0.0.1:8000/docs
+
+React frontend
+---------------------------------------
+
+.. code-block:: bash
+
+   npm i
+   npm run dev
+
+Once you run the server, you can view these links.
+
+- http://127.0.0.1:8000/redoc
+- http://127.0.0.1:8000/docs
+- http://127.0.0.1:5173

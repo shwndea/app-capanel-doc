@@ -32,10 +32,6 @@ A dashboard that displays key school performance metrics.
 Documentation is under development. It is based on [PyData Theme](https://pydata-sphinx-theme.readthedocs.io/).
 ```
 
-## First time here?
-
-We have a few places for you to get started:
-
 ## User guide
 
 Information about using the California Accountability Panel website.
@@ -46,9 +42,9 @@ Information about using the California Accountability Panel website.
 user-guide/index
 ```
 
-## Community and contribution guide
+## Developer guide
 
-Information about the community behind this theme and how you can contribute.
+Information about developing this application and how you can contribute.
 
 ```{toctree}
 :maxdepth: 2
@@ -58,11 +54,12 @@ developer-guide/index
 
 ## API reference
 
-The application uses FastAPI. You can view the Open API docs here lbsis.org/docs or view the full Python module
-reference here.
+The application uses FastAPI. You can view the Open API docs at [lbsis.org/docs](https://lbsis.org/docs) or view the
+full Python module
+reference.
 
 ```{toctree}
 :maxdepth: 2
 
-all-modules
+developer-guide/all-modules
 ```

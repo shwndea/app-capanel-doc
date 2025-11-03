@@ -4,7 +4,6 @@ from typing import Any, Dict
 
 from sphinx.application import Sphinx
 
-# Set required environment variables for Pydantic Settings validation
 os.environ.setdefault('PROJECT_NAME', 'California Accountability Panel')
 os.environ.setdefault('POSTGRES_SERVER', 'localhost')
 os.environ.setdefault('POSTGRES_USER', 'postgres')
@@ -13,7 +12,6 @@ os.environ.setdefault('POSTGRES_DB', 'app')
 os.environ.setdefault('FIRST_SUPERUSER', 'admin@example.com')
 os.environ.setdefault('FIRST_SUPERUSER_PASSWORD', 'changeme')
 os.environ.setdefault('SECRET_KEY', 'dummy-secret-key-for-docs')
-
 sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('.'))
 project = 'California Accountability Panel'
@@ -33,10 +31,11 @@ html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 html_favicon = '_static/image/favicon.ico'
 html_logo = '_static/image/logo.svg'
+html_show_sourcelink = False
 html_theme_options = {
     'use_edit_page_button': True,
     'navbar_align': 'content',
-    'logo': {'text': 'Documentation'},
+    'logo': {'text': 'CAPanel Docs'},
     'navbar_center': ['navbar-nav'],
     'navbar_end': ['theme-switcher', 'navbar-icon-links'],
     'navbar_persistent': ['search-button'],
@@ -57,16 +56,12 @@ html_theme_options = {
         },
     ],
 }
-
-html_show_sourcelink = False
-
 html_context = {
     'github_user': 'opensacorg',
     'github_repo': 'app-capanel-doc',
     'github_version': 'main',
     'doc_path': 'install/docs/source',
 }
-
 html_sidebars = {
     'developer-guide/index': ['sidebar-nav-bs.html', 'page-toc.html'],
     'feature/index': ['sidebar-nav-bs.html', 'page-toc.html'],

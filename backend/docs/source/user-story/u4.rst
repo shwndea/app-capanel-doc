@@ -1,8 +1,3 @@
-User Stories
-================================================================
-
-Users and use-cases for the California Accountability Panel.
-
 Parent/Guardian
 -------------
 - User_Story ID: U4

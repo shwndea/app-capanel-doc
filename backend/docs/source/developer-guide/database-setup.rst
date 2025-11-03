@@ -1,3 +1,3 @@
 Setup the database
 ================================================================
-db
+Initialize database
