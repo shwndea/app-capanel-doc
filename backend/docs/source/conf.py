@@ -40,7 +40,7 @@ html_theme_options = {
     'navbar_center': ['navbar-nav'],
     'navbar_end': ['theme-switcher', 'navbar-icon-links'],
     'navbar_persistent': ['search-button'],
-    'show_nav_level': 2,
+    'show_nav_level': 1,
     'navigation_depth': 4,
     'icon_links': [
         {
@@ -64,13 +64,13 @@ html_context = {
     'github_user': 'opensacorg',
     'github_repo': 'app-capanel-doc',
     'github_version': 'main',
-    'doc_path': 'backend/docs/source',
+    'doc_path': 'install/docs/source',
 }
 
 html_sidebars = {
-    'contribute/index': ['sidebar-nav-bs.html', 'page-toc.html'],
+    'developer-guide/index': ['sidebar-nav-bs.html', 'page-toc.html'],
     'feature/index': ['sidebar-nav-bs.html', 'page-toc.html'],
-    'user_guide/index': ['sidebar-nav-bs.html', 'page-toc.html'],
+    'user-guide/index': ['sidebar-nav-bs.html', 'page-toc.html'],
 }
 
 

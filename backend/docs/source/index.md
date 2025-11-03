@@ -43,7 +43,7 @@ Information about using the California Accountability Panel website.
 ```{toctree}
 :maxdepth: 2
 
-user_guide/index
+user-guide/index
 ```
 
 ## Community and contribution guide
@@ -53,7 +53,7 @@ Information about the community behind this theme and how you can contribute.
 ```{toctree}
 :maxdepth: 2
 
-contribute/index
+developer-guide/index
 ```
 
 ## API reference
