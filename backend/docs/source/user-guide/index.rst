@@ -15,11 +15,6 @@ Open source
     - Source code: `github.com/opensacorg/app-capanel-web <https://github.com/opensacorg/app-capanel-web>`_
     - Source code (docs): `github.com/opensacorg/app-capanel-doc <https://github.com/opensacorg/app-capanel-doc>`_
 
-First time here?
---------------------------------
-
-We have a few places for you to get started:
-
 .. toctree::
    :caption: Get started
    :maxdepth: 2

@@ -3,7 +3,6 @@ User stories
 Users and use-cases for the California Accountability Panel.
 
 .. toctree::
-   :caption: User stories
-   :maxdepth: 2
+   :maxdepth: 1
 
    u4
