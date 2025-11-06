@@ -15,6 +15,7 @@ Learn how to build and run the application locally.
    :maxdepth: 2
 
    run-application
+   python-beginner-guide
 
 .. toctree::
    :caption: Documentation
