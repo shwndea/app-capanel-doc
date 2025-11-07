@@ -30,8 +30,8 @@ const AddItem = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const queryClient = useQueryClient();
 	const { showSuccessToast } = useCustomToast();
-  const titleId = useId();
-  const descriptionId = useId();
+	const titleId = useId();
+	const descriptionId = useId();
 	const {
 		register,
 		handleSubmit,
