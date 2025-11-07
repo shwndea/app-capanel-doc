@@ -1,6 +1,6 @@
 {
   "name": "app-capanel-doc",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Documentation for California Accountability Panel website.",
   "private": false,
   "type": "module",

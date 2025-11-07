@@ -1,6 +1,6 @@
 [project]
 name = 'app'
-version = '0.1.0'
+version = '1.0.0'
 description = 'FastAPI application for the California Accountability Panel website.'
 requires-python = '>=3.10,<4.0'
 dependencies = [
@@ -8,6 +8,7 @@ dependencies = [
     'python-multipart',
     'email-validator',
     'passlib[bcrypt]',
+    "bcrypt==4.3.0",
     'tenacity',
     'pydantic',
     'emails',
@@ -16,7 +17,6 @@ dependencies = [
     'httpx',
     'psycopg[binary]',
     'sqlmodel',
-    'bcrypt',
     'pydantic-settings',
     'sentry-sdk[fastapi]',
     'pyjwt',
