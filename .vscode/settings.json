@@ -32,6 +32,5 @@
 	},
 	"editor.codeActionsOnSave": {
 		"source.organizeImports.biome": "explicit"
-	},
-	"explorer.excludeGitIgnore": true
+	}
 }
