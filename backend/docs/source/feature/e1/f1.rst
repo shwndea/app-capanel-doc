@@ -3,7 +3,11 @@ Performance Cards
 
 Cards that display the performance of local educational agencies (LEAs) on a set of state and local measures
 
-.. image:: /_static/image/Dashboard.png
+
+..
+  .. image:: /_static/image/Dashboard.png
+
+.. image:: https://github.com/opensacorg/app-capanel-doc/blob/main/backend/docs/source/_static/image/Dashboard.png
    :alt: Dashboard displaying LEA performance metrics
    :width: 600
    :align: center
