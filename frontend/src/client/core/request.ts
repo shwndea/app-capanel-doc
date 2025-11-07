@@ -1,11 +1,11 @@
+import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import axios from 'axios';
-import type { AxiosError, AxiosRequestConfig, AxiosResponse, AxiosInstance } from 'axios';
 
 import { ApiError } from './ApiError';
 import type { ApiRequestOptions } from './ApiRequestOptions';
 import type { ApiResult } from './ApiResult';
-import { CancelablePromise } from './CancelablePromise';
 import type { OnCancel } from './CancelablePromise';
+import { CancelablePromise } from './CancelablePromise';
 import type { OpenAPIConfig } from './OpenAPI';
 
 export const isString = (value: unknown): value is string => {
@@ -134,11 +134,11 @@ export const getHeaders = async <T>(config: OpenAPIConfig, options: ApiRequestOp
 		...additionalHeaders,
 		...options.headers,
 	})
-	.filter(([, value]) => value !== undefined && value !== null)
-	.reduce((headers, [key, value]) => ({
-		...headers,
-		[key]: String(value),
-	}), {} as Record<string, string>);
+		.filter(([, value]) => value !== undefined && value !== null)
+		.reduce((headers, [key, value]) => ({
+			...headers,
+			[key]: String(value),
+		}), {} as Record<string, string>);
 
 	if (isStringWithValue(token)) {
 		headers['Authorization'] = `Bearer ${token}`;

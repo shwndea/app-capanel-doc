@@ -4,7 +4,9 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Architecture
 
-This is a full-stack project using FastAPI for the backend and React for the frontend. The backend is written in Python and uses SQLModel as the ORM to interact with a PostgreSQL database. The frontend is written in TypeScript and uses Chakra UI for components. The entire application is containerized using Docker Compose.
+This is a full-stack project using FastAPI for the backend and React for the frontend. The backend is written in Python
+and uses SQLModel as the ORM to interact with a PostgreSQL database. The frontend is written in TypeScript and uses
+Chakra UI for components. The entire application is containerized using Docker Compose.
 
 - **Backend:** The main backend code is located in the `backend/app` directory.
 - **Frontend:** The main frontend code is located in the `frontend/src` directory.
