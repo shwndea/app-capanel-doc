@@ -1,1 +1,33 @@
 .env
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+docs_venv/
+backend/docs_venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Sphinx documentation
+docs/_build/
+docs/build/
+backend/docs/build/
+backend/docs/_build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
