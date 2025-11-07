@@ -18,10 +18,11 @@ export interface OnCancel {
 }
 
 export class CancelablePromise<T> implements Promise<T> {
-	readonly cancelHandlers: (() => void)[];
-	readonly promise: Promise<T>;
 	private _isResolved: boolean;
 	private _isRejected: boolean;
+	private _isCancelled: boolean;
+	readonly cancelHandlers: (() => void)[];
+	readonly promise: Promise<T>;
 	private _resolve?: (value: T | PromiseLike<T>) => void;
 	private _reject?: (reason?: unknown) => void;
 
@@ -79,13 +80,7 @@ export class CancelablePromise<T> implements Promise<T> {
 		});
 	}
 
-	private _isCancelled: boolean;
-
-	public get isCancelled(): boolean {
-		return this._isCancelled;
-	}
-
-	get [Symbol.toStringTag]() {
+	get [Symbol.toStringTag](): string {
 		return 'Cancellable Promise';
 	}
 
@@ -123,5 +118,9 @@ export class CancelablePromise<T> implements Promise<T> {
 		}
 		this.cancelHandlers.length = 0;
 		if (this._reject) this._reject(new CancelError('Request aborted'));
+	}
+
+	public get isCancelled(): boolean {
+		return this._isCancelled;
 	}
 }

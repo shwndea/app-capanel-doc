@@ -4,49 +4,184 @@ import type { CancelablePromise } from './core/CancelablePromise';
 import { OpenAPI } from './core/OpenAPI';
 import { request as __request } from './core/request';
 import type {
-	ItemsCreateItemData,
-	ItemsCreateItemResponse,
-	ItemsDeleteItemData,
-	ItemsDeleteItemResponse,
-	ItemsReadItemData,
-	ItemsReadItemResponse,
+	CensusdataCountOfCensusDataData,
+	CensusdataCountOfCensusDataResponse,
+	CensusdataCreateCensusDataData,
+	CensusdataCreateCensusDataResponse,
+	CensusdataReadCensusDataData,
+	CensusdataReadCensusDataResponse,
+	CensusdataUpdateCensusDataData,
+	CensusdataUpdateCensusDataResponse,
+	CensusdataDeleteCensusDataData,
+	CensusdataDeleteCensusDataResponse,
 	ItemsReadItemsData,
 	ItemsReadItemsResponse,
+	ItemsCreateItemData,
+	ItemsCreateItemResponse,
+	ItemsReadItemData,
+	ItemsReadItemResponse,
 	ItemsUpdateItemData,
 	ItemsUpdateItemResponse,
+	ItemsDeleteItemData,
+	ItemsDeleteItemResponse,
 	LoginLoginAccessTokenData,
 	LoginLoginAccessTokenResponse,
+	LoginTestTokenResponse,
 	LoginRecoverPasswordData,
-	LoginRecoverPasswordHtmlContentData,
-	LoginRecoverPasswordHtmlContentResponse,
 	LoginRecoverPasswordResponse,
 	LoginResetPasswordData,
 	LoginResetPasswordResponse,
-	LoginTestTokenResponse,
+	LoginRecoverPasswordHtmlContentData,
+	LoginRecoverPasswordHtmlContentResponse,
 	PrivateCreateUserData,
 	PrivateCreateUserResponse,
-	UsersCreateUserData,
-	UsersCreateUserResponse,
-	UsersDeleteUserData,
-	UsersDeleteUserMeResponse,
-	UsersDeleteUserResponse,
-	UsersReadUserByIdData,
-	UsersReadUserByIdResponse,
-	UsersReadUserMeResponse,
+	SchoolsReadSchoolsData,
+	SchoolsReadSchoolsResponse,
+	SchoolsReadSchoolsSummaryData,
+	SchoolsReadSchoolsSummaryResponse,
 	UsersReadUsersData,
 	UsersReadUsersResponse,
-	UsersRegisterUserData,
-	UsersRegisterUserResponse,
-	UsersUpdatePasswordMeData,
-	UsersUpdatePasswordMeResponse,
-	UsersUpdateUserData,
+	UsersCreateUserData,
+	UsersCreateUserResponse,
+	UsersReadUserMeResponse,
+	UsersDeleteUserMeResponse,
 	UsersUpdateUserMeData,
 	UsersUpdateUserMeResponse,
+	UsersUpdatePasswordMeData,
+	UsersUpdatePasswordMeResponse,
+	UsersRegisterUserData,
+	UsersRegisterUserResponse,
+	UsersReadUserByIdData,
+	UsersReadUserByIdResponse,
+	UsersUpdateUserData,
 	UsersUpdateUserResponse,
-	UtilsHealthCheckResponse,
+	UsersDeleteUserData,
+	UsersDeleteUserResponse,
 	UtilsTestEmailData,
 	UtilsTestEmailResponse,
+	UtilsHealthCheckResponse,
 } from './types.gen';
+
+export class CensusdataService {
+	/**
+	 * Count Of Census Data
+	 * Retrieve census data.
+	 * @param data The data for the request.
+	 * @param data.skip
+	 * @param data.limit
+	 * @returns CensusData Successful Response
+	 * @throws ApiError
+	 */
+	public static countOfCensusData(
+		data: CensusdataCountOfCensusDataData = {},
+	): CancelablePromise<CensusdataCountOfCensusDataResponse> {
+		return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/censusdata/',
+			query: {
+				skip: data.skip,
+				limit: data.limit,
+			},
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+
+	/**
+	 * Create Census Data
+	 * Create new census data.
+	 * @param data The data for the request.
+	 * @param data.requestBody
+	 * @returns CensusData Successful Response
+	 * @throws ApiError
+	 */
+	public static createCensusData(
+		data: CensusdataCreateCensusDataData,
+	): CancelablePromise<CensusdataCreateCensusDataResponse> {
+		return __request(OpenAPI, {
+			method: 'POST',
+			url: '/api/v1/censusdata/',
+			body: data.requestBody,
+			mediaType: 'application/json',
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+
+	/**
+	 * Read Census Data
+	 * Get census data by ID.
+	 * @param data The data for the request.
+	 * @param data.id
+	 * @returns CensusData Successful Response
+	 * @throws ApiError
+	 */
+	public static readCensusData(
+		data: CensusdataReadCensusDataData,
+	): CancelablePromise<CensusdataReadCensusDataResponse> {
+		return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/censusdata/{id}',
+			path: {
+				id: data.id,
+			},
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+
+	/**
+	 * Update Census Data
+	 * Update census data by ID.
+	 * @param data The data for the request.
+	 * @param data.id
+	 * @param data.requestBody
+	 * @returns CensusData Successful Response
+	 * @throws ApiError
+	 */
+	public static updateCensusData(
+		data: CensusdataUpdateCensusDataData,
+	): CancelablePromise<CensusdataUpdateCensusDataResponse> {
+		return __request(OpenAPI, {
+			method: 'PUT',
+			url: '/api/v1/censusdata/{id}',
+			path: {
+				id: data.id,
+			},
+			body: data.requestBody,
+			mediaType: 'application/json',
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+
+	/**
+	 * Delete Census Data
+	 * Delete census data by ID.
+	 * @param data The data for the request.
+	 * @param data.id
+	 * @returns CensusData Successful Response
+	 * @throws ApiError
+	 */
+	public static deleteCensusData(
+		data: CensusdataDeleteCensusDataData,
+	): CancelablePromise<CensusdataDeleteCensusDataResponse> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/api/v1/censusdata/{id}',
+			path: {
+				id: data.id,
+			},
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+}
 
 export class ItemsService {
 	/**
@@ -291,6 +426,62 @@ export class PrivateService {
 			url: '/api/v1/private/users/',
 			body: data.requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+}
+
+export class SchoolsService {
+	/**
+	 * Read Schools
+	 * Retrieve schools.
+	 * @param data The data for the request.
+	 * @param data.q
+	 * @param data.skip
+	 * @param data.limit
+	 * @returns SchoolsPublic Successful Response
+	 * @throws ApiError
+	 */
+	public static readSchools(
+		data: SchoolsReadSchoolsData = {},
+	): CancelablePromise<SchoolsReadSchoolsResponse> {
+		return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/schools/',
+			query: {
+				q: data.q,
+				skip: data.skip,
+				limit: data.limit,
+			},
+			errors: {
+				422: 'Validation Error',
+			},
+		});
+	}
+
+	/**
+	 * Read Schools Summary
+	 * Retrieve schools with a summarized view.
+	 * @param data The data for the request.
+	 * @param data.q
+	 * @param data.skip
+	 * @param data.limit
+	 * @returns SchoolsSummary Successful Response
+	 * @throws ApiError
+	 */
+	public static readSchoolsSummary(
+		data: SchoolsReadSchoolsSummaryData = {},
+	): CancelablePromise<SchoolsReadSchoolsSummaryResponse> {
+		return __request(OpenAPI, {
+			method: 'GET',
+			url: '/api/v1/schools/summary',
+			query: {
+				q: data.q,
+				skip: data.skip,
+				limit: data.limit,
+			},
 			errors: {
 				422: 'Validation Error',
 			},

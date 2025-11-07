@@ -9,6 +9,35 @@ export type Body_login_login_access_token = {
 	client_secret?: string | null;
 };
 
+export type CensusData = {
+	academic_year: number;
+	aggregation_level: string;
+	county_code: string;
+	district_code: string;
+	school_code: string;
+	county_name: string;
+	district_name: string;
+	school_name: string;
+	charter: string;
+	reporting_category: string;
+	total_enr?: number;
+	gr_tk?: number;
+	gr_kn?: number;
+	gr_1?: number;
+	gr_2?: number;
+	gr_3?: number;
+	gr_4?: number;
+	gr_5?: number;
+	gr_6?: number;
+	gr_7?: number;
+	gr_8?: number;
+	gr_9?: number;
+	gr_10?: number;
+	gr_11?: number;
+	gr_12?: number;
+	census_data_id?: string;
+};
+
 export type HTTPValidationError = {
 	detail?: Array<ValidationError>;
 };
@@ -49,6 +78,74 @@ export type PrivateUserCreate = {
 	password: string;
 	full_name: string;
 	is_verified?: boolean;
+};
+
+export type SchoolPublic = {
+	cds_code: string;
+	nces_dist?: string | null;
+	nces_school?: string | null;
+	status_type?: string | null;
+	county?: string | null;
+	district?: string | null;
+	school?: string | null;
+	street?: string | null;
+	street_abr?: string | null;
+	city?: string | null;
+	zip?: string | null;
+	state?: string | null;
+	mail_street?: string | null;
+	mail_street_abr?: string | null;
+	mail_city?: string | null;
+	mail_zip?: string | null;
+	mail_state?: string | null;
+	phone?: string | null;
+	ext?: string | null;
+	fax_number?: string | null;
+	website?: string | null;
+	open_date?: string | null;
+	closed_date?: string | null;
+	charter?: string | null;
+	charter_num?: string | null;
+	funding_type?: string | null;
+	doc?: string | null;
+	doc_type?: string | null;
+	soc?: string | null;
+	soc_type?: string | null;
+	edops_code?: string | null;
+	edops_name?: string | null;
+	eil_code?: string | null;
+	eil_name?: string | null;
+	gs_offered?: string | null;
+	gs_served?: string | null;
+	virtual?: string | null;
+	magnet?: string | null;
+	year_round_yn?: string | null;
+	federal_dfc_district_id?: string | null;
+	latitude?: number | null;
+	longitude?: number | null;
+	adm_fname?: string | null;
+	adm_lname?: string | null;
+	last_up_date?: string | null;
+	multilingual?: string | null;
+	id: string;
+};
+
+export type SchoolsPublic = {
+	data: Array<SchoolPublic>;
+	count: number;
+};
+
+export type SchoolsSummary = {
+	data: Array<SchoolSummary>;
+	count: number;
+};
+
+export type SchoolSummary = {
+	id: string;
+	school?: string | null;
+	city?: string | null;
+	county?: string | null;
+	cds_code?: string | null;
 };
 
 export type Token = {
@@ -106,6 +203,38 @@ export type ValidationError = {
 	msg: string;
 	type: string;
 };
+
+export type CensusdataCountOfCensusDataData = {
+	limit?: number;
+	skip?: number;
+};
+
+export type CensusdataCountOfCensusDataResponse = Array<CensusData>;
+
+export type CensusdataCreateCensusDataData = {
+	requestBody: CensusData;
+};
+
+export type CensusdataCreateCensusDataResponse = CensusData;
+
+export type CensusdataReadCensusDataData = {
+	id: string;
+};
+
+export type CensusdataReadCensusDataResponse = CensusData;
+
+export type CensusdataUpdateCensusDataData = {
+	id: string;
+	requestBody: CensusData;
+};
+
+export type CensusdataUpdateCensusDataResponse = CensusData;
+
+export type CensusdataDeleteCensusDataData = {
+	id: string;
+};
+
+export type CensusdataDeleteCensusDataResponse = CensusData;
 
 export type ItemsReadItemsData = {
 	limit?: number;
@@ -170,6 +299,22 @@ export type PrivateCreateUserData = {
 };
 
 export type PrivateCreateUserResponse = UserPublic;
+
+export type SchoolsReadSchoolsData = {
+	limit?: number;
+	q?: string | null;
+	skip?: number;
+};
+
+export type SchoolsReadSchoolsResponse = SchoolsPublic;
+
+export type SchoolsReadSchoolsSummaryData = {
+	limit?: number;
+	q?: string | null;
+	skip?: number;
+};
+
+export type SchoolsReadSchoolsSummaryResponse = SchoolsSummary;
 
 export type UsersReadUsersData = {
 	limit?: number;
