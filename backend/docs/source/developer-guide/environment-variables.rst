@@ -1,7 +1,7 @@
 Add environment variables
 ================================================================
 Configure environment variables as needed (see app/core/config.py for available settings).
-
+    
 .. code-block:: bash
    :caption: .env
 

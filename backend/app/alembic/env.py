@@ -12,6 +12,7 @@ from app.utility.models import User, Item, CensusData, School  # noqa
 
 target_metadata = SQLModel.metadata
 
+
 def get_url():
     return str(settings.SQLALCHEMY_DATABASE_URI)
 

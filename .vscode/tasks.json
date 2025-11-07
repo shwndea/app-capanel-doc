@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "uv: Sync Dependencies (backend)",
+      "type": "shell",
+      // Navigate to the backend folder before running uv sync
+      "command": "cd backend && uv sync",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "detail": "Installs and syncs dependencies using uv inside backend/"
+    },
+    {
+      "label": "uv: Run Dev Server (backend)",
+      "type": "shell",
+      // Navigate to the backend folder and run the defined dev script
+      "command": "cd backend && uv run fastapi dev",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      // This problem matcher keeps the task running in the background 
+      // while the dev server is active.
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": ".*",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^(INFO|WARNING):\\s+.*running on.*$",
+          "endsPattern": "^(INFO|WARNING):\\s+Shutting down$"
+        }
+      },
+      "detail": "Runs the FastAPI development server using uv run fastapi dev"
+    }
+  ]
+}
