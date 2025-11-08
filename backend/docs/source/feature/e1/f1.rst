@@ -8,12 +8,3 @@ Cards that display the performance of local educational agencies (LEAs) on a set
    :width: 600
    :align: center
 
-Performance Cards
-    - English
-    - Math
-    - Science
-    - Progress of English as a Second Language Learners
-    - Suspension Rates
-    - Chronic Absenteeism
-    - Graduation Rate
-    - College/Career Readiness

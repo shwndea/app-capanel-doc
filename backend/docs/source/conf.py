@@ -24,6 +24,7 @@ extensions = [
     'sphinx_design',
     '_extension.gallery_directive',
     '_extension.component_directive',
+    'sphinxcontrib.mermaid',
 ]
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
