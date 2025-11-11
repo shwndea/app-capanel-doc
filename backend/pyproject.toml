@@ -34,6 +34,7 @@ dependencies = [
     "types-docutils",
     "myst-parser",
     "sphinx-design",
+    "sphinxcontrib-mermaid>=1.0.0",
 ]
 
 [build-system]
