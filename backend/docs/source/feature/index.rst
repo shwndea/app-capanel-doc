@@ -218,19 +218,7 @@ This project demonstrates several important software design patterns:
 - **Repository Pattern**: Data access abstraction layer
 - **Dependency Injection**: Loose coupling through FastAPI's dependency system
 
-Feature List
-------------
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Epics & Features
-
-   e1/index
-   e2/index
-   e3/index
-   e4/index
-   e5/index
-   e6/index
 
 Related Documentation
 ---------------------
