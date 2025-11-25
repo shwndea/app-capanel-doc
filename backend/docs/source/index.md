@@ -41,6 +41,23 @@ Information about using the California Accountability Panel website.
 
 user-guide/index
 ```
+```{gallery-grid}
+:grid-columns: 1 2 2 3
+
+- header: "{fas}`chart-simple;pst-color-primary` Suspension Rates"
+  content: "- View performance metrics from the California Dashboard \n - Integrate [The Automated PADC Processor](https://lbsis.org) to predict your school sites suspension rates!"
+
+- header: "{fas}`circle-user;pst-color-primary` English Learner Progress"
+  content: "- View performance metrics from the California Dashboard \n- Identify Long Term English Learners by subgroup \n - Gain insight on their local assessment progress"
+- header: "{fas}`gauge-simple-high;pst-color-primary` Graduation Rates"
+  content: "Metrics are based on student assessment results and other aspects of school performance."
+- header: "{fas}`database;pst-color-primary` College and Career"
+  content: "Uses public data from the [California Department of Education](https://www.cde.ca.gov/)."
+- header: "{fas}`file-csv;pst-color-primary` CSV upload"
+  content: "Use your own data by uploading a CSV file."
+- header: "{fas}`lightbulb;pst-color-primary` Contribute"
+  content: "We welcome contributions! The project is open-source.\n- [GitHub](https://github.com/opensacorg/app-capanel-web)\n- [GitHub docs](https://github.com/opensacorg/app-capanel-doc)"
+```
 
 ## Developer guide
 

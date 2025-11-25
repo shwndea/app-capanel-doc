@@ -36,9 +36,9 @@ To run both simultaneously, use **two separate terminals**:
 **Terminal 1 - Documentation (this repo):**
 ```powershell
 cd C:\Users\Shawn\Desktop\GCC_AI\app-capanel-doc\backend\docs\build\html
-python -m http.server 8000
+python -m http.server 8001
 ```
-Then open: http://localhost:8000
+Then open: http://localhost:8001
 
 **Terminal 2 - Web Application:**
 ```powershell
@@ -126,23 +126,24 @@ This command:
 
 **Option A: Auto-Reload Server (Recommended for Development)**
 ```powershell
-uv run sphinx-autobuild source build/html --open-browser
+uv run sphinx-autobuild source build/html --open-browser --port 8001
 ```
 This will:
 - ✨ Automatically rebuild when you save changes to source files
 - 🔄 Auto-refresh your browser when rebuilds complete
-- 🌐 Open http://127.0.0.1:8000 automatically
+- 🌐 Open http://127.0.0.1:8001 automatically
+- 📌 Uses port 8001 to avoid conflicts with other services
 
 **Option B: Simple HTTP Server (View Only)**
 ```powershell
 cd build/html
-python -m http.server 8000
+python -m http.server 8001
 ```
 This serves static files but does **NOT** auto-reload on changes.
 
 **Step 6: Open your browser**
 
-Navigate to: http://localhost:8000 (or http://127.0.0.1:8000 for auto-reload)
+Navigate to: http://localhost:8001 (or http://127.0.0.1:8001 for auto-reload)
 
 You should now see the documentation website! 🎉
 
@@ -174,7 +175,7 @@ For all of the options, see the [Make support documentation](https://opensacorg.
 
 #### Build and launch the Sphinx documentation.
 
-Live-reload the backend documentation and start a local server on [localhost:8000](localhost:8000).
+Live-reload the backend documentation and start a local server on [localhost:8001](http://localhost:8001).
 
 ```shell
 cd backend/docs
@@ -218,8 +219,11 @@ Solution: Use `uv run sphinx-build` instead of calling sphinx-build directly
 
 **Issue 4: Port 8000 already in use**
 ```
-Solution: Use a different port:
-python -m http.server 8001
+Solution: The documentation now uses port 8001 by default to avoid conflicts.
+If port 8001 is also in use, specify a different port:
+python -m http.server 8002
+or
+uv run sphinx-autobuild source build/html --open-browser --port 8002
 ```
 
 ## Development Workflow
